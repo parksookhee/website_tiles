@@ -1,0 +1,20 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bbs">
+	<select id="bbsList" parameterType="BbsDto" resultType="BbsDto">
+		SELECT
+			article_id articleId,
+			title,
+		    content,
+		    name,
+		    insert_date insertDate,
+		    DATE_FORMAT(FROM_UNIXTIME(insert_date), '%Y-%m-%d') insertDateDt,
+		    ipaddr,
+		    file_name fileName,
+		    file_size fileSize
+		FROM board
+			order by article_id desc
+	</select>
+</mapper>
