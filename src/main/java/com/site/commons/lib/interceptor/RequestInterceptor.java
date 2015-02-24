@@ -27,7 +27,7 @@ public class RequestInterceptor implements HandlerInterceptor {
 		else if ( uri.indexOf("/one") != -1 ) {
 			gnb = 500;
 		}
-		
+		   
 		request.setAttribute("gnb", gnb);
 
 		return true;
